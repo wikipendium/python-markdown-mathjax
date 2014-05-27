@@ -5,7 +5,7 @@ import markdown
 class MathJaxPattern(markdown.inlinepatterns.Pattern):
 
     def __init__(self):
-        markdown.inlinepatterns.Pattern.__init__(self, r'(?<!\\)(\$\$?)(.+?)\2')
+        markdown.inlinepatterns.Pattern.__init__(self, r'(?<!\\)(\$\$?)(.+?)(?<!\\)\2')
 
     def handleMatch(self, m):
         node = markdown.util.etree.Element('mathjax')
